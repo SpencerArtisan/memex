@@ -9,6 +9,10 @@ group :test do
   gem 'sqlite3'
 end
 
+group :development do
+  gem 'haml-rails'
+end
+
 group :production do
     gem 'pg'
 end
@@ -51,4 +55,3 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'af'

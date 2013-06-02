@@ -1,0 +1,19 @@
+%h1 Listing memories
+
+%table
+  %tr
+    %th Description
+    %th
+    %th
+    %th
+
+  - @memories.each do |memory|
+    %tr
+      %td= memory.description
+      %td= link_to 'Show', memory
+      %td= link_to 'Edit', edit_memory_path(memory)
+      %td= link_to 'Destroy', memory, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Memory', new_memory_path
