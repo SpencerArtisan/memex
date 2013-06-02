@@ -9,9 +9,7 @@ group :test do
   gem 'sqlite3'
 end
 
-group :development do
-  gem 'haml-rails'
-end
+gem 'haml-rails'
 
 group :production do
     gem 'pg'
