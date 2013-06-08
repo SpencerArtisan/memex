@@ -3,6 +3,7 @@ class MemoriesController < ApplicationController
 
   # GET /memories
   # GET /memories.json
+  # GET /memories.text
   def index
     @memories = Memory.all
   end

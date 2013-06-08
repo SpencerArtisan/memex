@@ -5,11 +5,15 @@ ruby '1.9.3'
 gem 'rails', '4.0.0.rc1'
 
 # Use sqlite3 as the database for Active Record
-group :test do
+group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
-gem 'haml-rails'
+group :development do
+  gem 'haml-rails'
+end
 
 group :production do
     gem 'pg'
