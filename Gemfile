@@ -11,9 +11,7 @@ group :development, :test do
   gem 'capybara'
 end
 
-group :development do
-  gem 'haml-rails'
-end
+gem 'haml-rails'
 
 group :production do
     gem 'pg'
