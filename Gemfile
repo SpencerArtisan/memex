@@ -10,6 +10,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'guard-rspec'
+  gem 'growl'
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 gem 'haml-rails'

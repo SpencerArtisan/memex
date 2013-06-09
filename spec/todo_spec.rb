@@ -5,17 +5,17 @@ describe ToDo do
   let (:todo) { ToDo.new rest_app }
 
   it 'should retrieve a list of item' do
-    rest_app.stub :all => 'task'
+    rest_app.stub all: 'task'
     todo.execute([]).should == 'task'
   end
 
   it 'should add a new item' do
-    rest_app.should_receive(:add).with :description => 'task'
+    rest_app.should_receive(:add).with description: 'task'
     todo.execute %w{task}
   end
   
   it 'should add a new multi-word item' do
-    rest_app.should_receive(:add).with :description => 'multi word task'
+    rest_app.should_receive(:add).with description: 'multi word task'
     todo.execute %w{multi word task}
   end
 

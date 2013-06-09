@@ -9,7 +9,7 @@ class ToDo
     elsif args[0] == '-d'
       @rest_app.delete args[1].to_i
     else
-      @rest_app.add :description => args.join(' ')
+      @rest_app.add description: args.join(' ')
     end
   end
 end
