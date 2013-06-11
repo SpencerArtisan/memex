@@ -6,8 +6,20 @@ class RestApp
   end
 
   def add params
-    begin
+    execute_ignore_redirect do
       RestClient.post 'http://localhost:3000/memories', {:memory => params}
+    end
+  end
+
+  def delete id
+    execute_ignore_redirect do
+      RestClient.delete "http://localhost:3000/memories/#{id}"
+    end
+  end
+
+  def execute_ignore_redirect
+    begin
+      yield
     rescue RestClient::Exception => e
       raise e unless e.message =~ /302/
     end
