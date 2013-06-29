@@ -1,0 +1,2 @@
+describe Memory do
+end

@@ -1,4 +1,5 @@
 class ToDo
+
   def initialize rest_app
     @rest_app = rest_app
   end
@@ -28,4 +29,5 @@ class ToDo
        todo -p id                 make item with given id high priority
     }
   end
+
 end
