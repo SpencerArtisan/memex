@@ -23,4 +23,14 @@ describe ToDo do
     rest_app.should_receive(:delete).with 1
     todo.execute %w{-d 1}
   end
+
+
+  it 'should mark a task as high priority' do
+    rest_app.should_receive(:amend).with 1, :priority => :high
+    todo.execute %w{-p 1}
+  end
+
+  it 'should provide help' do
+    todo.execute(%w{-help}).should_not be_nil
+  end
 end

@@ -1,4 +1,4 @@
 <% @memories.each do |memory| %>
-<%= memory.id %>. <%= memory.description %>
+  <% if memory.priority == 'high' %>*<%else%> <% end  %><%= memory.id %>. <%= memory.description %>
 <% end %>
 

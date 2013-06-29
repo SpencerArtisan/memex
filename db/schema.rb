@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20130602110600) do
 
   create_table "memories", force: true do |t|
     t.string   "description"
+    t.string   "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

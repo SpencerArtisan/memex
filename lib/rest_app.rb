@@ -10,6 +10,12 @@ class RestApp
       RestClient.post 'http://localhost:3000/memories', {:memory => params}
     end
   end
+  
+  def amend id, params
+    execute_ignore_redirect do
+      RestClient.put "http://localhost:3000/memories/#{id}", {:memory => params}
+    end
+  end
 
   def delete id
     execute_ignore_redirect do
