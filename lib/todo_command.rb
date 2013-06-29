@@ -1,4 +1,9 @@
 require 'todo'
-require 'rest_app'
+require 'client_rest_app'
 
-puts ToDo.new(RestApp.new()).execute ARGV
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'db/development.sqlite3'
+)
+
+puts ToDo.new(ClientRestApp.new()).execute ARGV

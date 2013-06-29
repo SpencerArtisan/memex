@@ -1,13 +1,18 @@
+require 'active_record'
+require 'erb'
+require 'memory'
+
+
 class ClientRestApp
   def all
     @memories = Memory.all
     template_file = File.open("app/views/memories/index.text.erb", 'r').read
-    erb = ERB.new(template_file)
+    erb = ERB.new template_file
     erb.result binding
   end
 
   def add params
-    @memory = Memory.create params
+    Memory.create params
   end
   
   def amend id, params
