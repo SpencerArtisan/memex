@@ -10,6 +10,8 @@ class ToDo
       @rest_app.delete args[1].to_i
     elsif args[0] == '-p'
       @rest_app.amend args[1].to_i, priority: :high
+    elsif args[0] == '-c'
+      @rest_app.amend args[1].to_i, status: :complete
     elsif args[0] == '-help'
       help
     else

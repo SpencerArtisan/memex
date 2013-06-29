@@ -37,6 +37,24 @@ describe "Memories" do
     Memory.first.priority.should == 'modified'
   end
 
+  it 'should allow editing of a memory status' do
+    memory = Memory.create description: 'memory'
+    visit '/memories'
+    click_on 'Edit'
+    fill_in 'Status', with: 'complete'
+    click_on 'Save'
+    Memory.count.should == 1
+    Memory.first.status.should == 'complete'
+  end
+
+  it 'should provide a filtered text list of memories' do
+    memory = Memory.create description: 'memory 1', status: nil
+    memory = Memory.create description: 'memory 2', status: :complete
+    visit '/memories.text'
+    page.should have_content 'memory 1'
+    page.should_not have_content 'memory 2'
+  end
+
   it 'should provide a text list of memories' do
     memory = Memory.create description: 'memory'
     visit '/memories.text'

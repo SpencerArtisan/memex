@@ -1,4 +1,4 @@
-<% @memories.each do |memory| %>
+<% @memories.find_all{|memory| memory.status.nil?}.each do |memory| %>
   <% if memory.priority == 'high' %>*<%else%> <% end  %><%= memory.id %>. <%= memory.description %>
 <% end %>
 
