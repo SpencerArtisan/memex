@@ -23,6 +23,9 @@ class ToDo
     %q{
        todo                       list items
        todo an item description   add an item
-       todo -d id                 delete item with given id}
+       todo -d id                 delete item with given id
+       todo -c id                 complete item with given id
+       todo -p id                 make item with given id high priority
+    }
   end
 end
